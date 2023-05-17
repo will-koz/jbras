@@ -6,6 +6,8 @@ Utilities for the Jack Boller: Rhymin' and Stealin' board game.
 
 ## TODO
 
+- [ ] Decent README
+
 ## Credits
 
 ## License

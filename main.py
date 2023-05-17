@@ -34,6 +34,6 @@ def gen_characters (x = 3):
 		s = characters[min(i, len(characters) - 1)]
 		print(s[0] + ": " + str(math.ceil(s[1] + doubly_open_ended_number())))
 
-# TODO comment this
+# given a number between 0 and 1, return a number between -infinity and infinity
 def inv_cdf (x):
 	return -math.log(1 / x - 1, 2)
