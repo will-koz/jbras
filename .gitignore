@@ -1,2 +1,2 @@
-# Ignore precompiled python bytecode:
+# Ignore compiled python bytecode:
 __pycache__
