@@ -30,7 +30,7 @@ def equipment ():
 		if i != choice:
 			print(" " + i, end = "")
 	print()
-	print("Folder (V) starts in stash " + random.choice(stashes) + ".")
+	print("Folder \"V\" starts in stash " + random.choice(stashes) + ".")
 
 # Flip a coin x times
 def gen_binary_list (x = 10):
@@ -47,6 +47,21 @@ def gen_characters (x = 3):
 		s = characters[min(i, len(characters) - 1)]
 		print(s[0] + ": " + str(math.ceil(s[1] + doubly_open_ended_number())))
 	print("(Last " + characters[-1][0] + " gets +1 style point.)")
+
+# Generate the distance a grenade can go
+def get_grenade_distance (x = 5):
+	print(max(0, math.floor(x + (doubly_open_ended_number() / 2))))
+
+# Print out the speed a player can move in a turn.
+def get_speed (is_male = True, intox = 0):
+	speeds = []
+	for i in range(2):
+		num = 12 if is_male else 9
+		num += doubly_open_ended_number()
+		num += intox
+		num = max(math.floor(num), 0)
+		speeds.append(num)
+	print(speeds)
 
 # given a number between 0 and 1, return a number between -infinity and infinity
 def inv_cdf (x):
