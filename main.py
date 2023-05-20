@@ -4,6 +4,7 @@ import math, random
 
 characters = [ ("Jack Boller", 50), ("Ali Baba", 35), ("Thief", 25) ]
 explosives = [ "black", "blue", "green", "red" ]
+stashes = "ABCDEF"
 
 # Convert a list of elements of the set {0, 1} into a floating point number
 def binary_list_to_float (x = None):
@@ -29,6 +30,7 @@ def equipment ():
 		if i != choice:
 			print(" " + i, end = "")
 	print()
+	print("Folder (V) starts in stash " + random.choice(stashes) + ".")
 
 # Flip a coin x times
 def gen_binary_list (x = 10):
