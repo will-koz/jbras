@@ -39,6 +39,14 @@ def equipment ():
 	print()
 	print("Folder \"V\" starts in stash " + random.choice(stashes) + ".")
 
+# Sums the second argument with the first argument number of doubly open-ended numbers. Useful for
+# calculating the damage of firearms.
+def firearm (x, y):
+	sum = y
+	for i in range(x):
+		sum += doubly_open_ended_number()
+	print(round(sum))
+
 # Flip a coin x times
 def gen_binary_list (x = 25):
 	l = []
