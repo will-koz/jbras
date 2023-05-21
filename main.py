@@ -18,6 +18,13 @@ def binary_list_to_float (x = None):
 			sum += current_delta
 	return sum
 
+def calc_speed (is_male = True, intox = 0):
+	num = 12 if is_male else 9
+	num += intox
+	num += doubly_open_ended_number()
+	num = max(math.ceil(num), 0)
+	return num
+
 def doubly_open_ended_number ():
 	return inv_cdf(binary_list_to_float())
 
@@ -33,7 +40,7 @@ def equipment ():
 	print("Folder \"V\" starts in stash " + random.choice(stashes) + ".")
 
 # Flip a coin x times
-def gen_binary_list (x = 10):
+def gen_binary_list (x = 25):
 	l = []
 	for i in range(x):
 		l.append(math.floor(random.random() * 2))
@@ -56,11 +63,7 @@ def get_grenade_distance (x = 5):
 def get_speed (is_male = True, intox = 0):
 	speeds = []
 	for i in range(2):
-		num = 12 if is_male else 9
-		num += doubly_open_ended_number()
-		num += intox
-		num = max(math.floor(num), 0)
-		speeds.append(num)
+		speeds.append(calc_speed(is_male, intox))
 	print(speeds)
 
 # given a number between 0 and 1, return a number between -infinity and infinity
