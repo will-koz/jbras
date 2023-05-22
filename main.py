@@ -28,8 +28,8 @@ def calc_speed (is_male = True, intox = 0):
 def doubly_open_ended_number ():
 	return inv_cdf(binary_list_to_float())
 
-def equipment ():
 	# Choose explosives / detonators
+def equipment ():
 	choice = random.choice(explosives)
 	print(characters[0][0] + ": " + choice)
 	print(characters[1][0] + ":", end = "")
