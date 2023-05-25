@@ -18,12 +18,21 @@ def binary_list_to_float (x = None):
 			sum += current_delta
 	return sum
 
-def calc_speed (is_male = True, intox = 0):
-	num = 12 if is_male else 9
-	num += intox
-	num += doubly_open_ended_number()
-	num = max(math.ceil(num), 0)
-	return num
+def calc_1speed (is_male = True, intox = 0):
+	key = "male" if is_male else "female"
+	return calc_speeds()[key][intox + 5][0]
+
+def calc_speeds ():
+	r = { "male" : [], "female" : [] }
+	l = []
+	for i in range(2):
+		l.append(doubly_open_ended_number())
+	for i in r:
+		for j in range(-5, 5 + 1):
+			r[i].append([]);
+			for k in l:
+				r[i][-1].append(max(math.ceil(k + j + (12 if i == "male" else 9)), 0))
+	return r
 
 def doubly_open_ended_number ():
 	return inv_cdf(binary_list_to_float())
@@ -68,11 +77,12 @@ def get_grenade_distance (x = 5):
 	print(max(0, math.floor(x + (doubly_open_ended_number() / 2))))
 
 # Print out the speed a player can move in a turn.
-def get_speed (is_male = True, intox = 0):
-	speeds = []
-	for i in range(2):
-		speeds.append(calc_speed(is_male, intox))
-	print(speeds)
+def get_speed ():
+	l = calc_speeds()
+	for i in l:
+		print(i + ":")
+		for j in range(-5, 5 + 1):
+			print("\t" + str(j) + ": " + str(l[i][j + 5]))
 
 # given a number between 0 and 1, return a number between -infinity and infinity
 def inv_cdf (x):
