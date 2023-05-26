@@ -87,3 +87,10 @@ def get_speed ():
 # given a number between 0 and 1, return a number between -infinity and infinity
 def inv_cdf (x):
 	return -math.log(1 / x - 1, 2)
+
+def list ():
+	print("get_grenade_distance()")
+	print("get_speed()")
+	print("gen_characters()")
+	print("equipment()")
+	print("firearm()")
